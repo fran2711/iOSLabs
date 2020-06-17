@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CHe-JF-CeR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Airport Picker View Controller-->
+        <scene sceneID="xgx-Fd-QM2">
+            <objects>
+                <viewController id="CHe-JF-CeR" customClass="AirportPickerViewController" customModule="iOSLabs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4wa-OS-aMh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnw-fU-w0a">
+                                <rect key="frame" x="69" y="303.5" width="276" height="299"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qrQ-cc-dGf">
+                                        <rect key="frame" x="0.0" y="0.0" width="276" height="299"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="CHe-JF-CeR" id="26b-uP-tBA"/>
+                                            <outlet property="delegate" destination="CHe-JF-CeR" id="oSZ-6y-bzu"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="qrQ-cc-dGf" firstAttribute="centerY" secondItem="87f-Lh-Ueb" secondAttribute="centerY" id="4lK-f2-Mam"/>
+                                    <constraint firstItem="qrQ-cc-dGf" firstAttribute="centerX" secondItem="87f-Lh-Ueb" secondAttribute="centerX" id="RoT-LL-axn"/>
+                                    <constraint firstItem="qrQ-cc-dGf" firstAttribute="width" secondItem="lnw-fU-w0a" secondAttribute="width" id="Ugb-lh-RAR"/>
+                                    <constraint firstItem="qrQ-cc-dGf" firstAttribute="height" secondItem="lnw-fU-w0a" secondAttribute="height" id="zGf-qe-lAa"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="87f-Lh-Ueb"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lnw-fU-w0a" firstAttribute="height" secondItem="4wa-OS-aMh" secondAttribute="height" multiplier="1:3" id="6LV-7u-r6I"/>
+                            <constraint firstItem="lnw-fU-w0a" firstAttribute="width" secondItem="4wa-OS-aMh" secondAttribute="width" multiplier="2:3" id="BdU-Rq-F1E"/>
+                            <constraint firstItem="lnw-fU-w0a" firstAttribute="centerX" secondItem="wd2-bm-HRq" secondAttribute="centerX" id="ZFK-ib-KPf"/>
+                            <constraint firstItem="lnw-fU-w0a" firstAttribute="centerY" secondItem="wd2-bm-HRq" secondAttribute="centerY" id="azn-e0-P0v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wd2-bm-HRq"/>
+                    </view>
+                    <connections>
+                        <outlet property="aiportPickerView" destination="qrQ-cc-dGf" id="mMc-Eg-gK6"/>
+                        <outlet property="airportPickerBackgroundView" destination="lnw-fU-w0a" id="OFy-qY-P1C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="beY-YY-LCL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="26" y="64"/>
+        </scene>
+    </scenes>
+</document>

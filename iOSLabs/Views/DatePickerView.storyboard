@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AJs-As-nAo">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Date Picker View Controller-->
+        <scene sceneID="0vE-WL-hd9">
+            <objects>
+                <viewController id="AJs-As-nAo" customClass="DatePickerViewController" customModule="iOSLabs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p8Z-7I-tWY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UY8-sC-xdx">
+                                <rect key="frame" x="69" y="303" width="276" height="300"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="tfv-8r-LQz">
+                                        <rect key="frame" x="0.0" y="0.0" width="276" height="240"/>
+                                        <locale key="locale" localeIdentifier="es"/>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37S-vU-mNf">
+                                        <rect key="frame" x="0.0" y="250" width="276" height="50"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ZNp-5x-cL9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonAction:" destination="AJs-As-nAo" eventType="touchUpInside" id="Lv6-5g-A75"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="37S-vU-mNf" secondAttribute="trailing" id="4zC-fA-RjZ"/>
+                                    <constraint firstItem="tfv-8r-LQz" firstAttribute="width" secondItem="UY8-sC-xdx" secondAttribute="width" id="5cf-L4-f2P"/>
+                                    <constraint firstItem="tfv-8r-LQz" firstAttribute="top" secondItem="UY8-sC-xdx" secondAttribute="top" id="80C-ML-Yoh"/>
+                                    <constraint firstItem="37S-vU-mNf" firstAttribute="top" secondItem="tfv-8r-LQz" secondAttribute="bottom" constant="10" id="8h1-tK-PgL"/>
+                                    <constraint firstItem="tfv-8r-LQz" firstAttribute="centerX" secondItem="UY8-sC-xdx" secondAttribute="centerX" id="Dpa-Aw-rOb"/>
+                                    <constraint firstItem="37S-vU-mNf" firstAttribute="leading" secondItem="UY8-sC-xdx" secondAttribute="leading" id="Zm5-TQ-nvo"/>
+                                    <constraint firstAttribute="bottom" secondItem="37S-vU-mNf" secondAttribute="bottom" id="fSW-4h-5JV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.49167915239726029" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UY8-sC-xdx" firstAttribute="height" secondItem="p8Z-7I-tWY" secondAttribute="height" multiplier="1:3" constant="1" id="fXR-Yq-yb7"/>
+                            <constraint firstItem="UY8-sC-xdx" firstAttribute="centerX" secondItem="fCW-0z-xvI" secondAttribute="centerX" id="uX2-8j-tRd"/>
+                            <constraint firstItem="UY8-sC-xdx" firstAttribute="width" secondItem="p8Z-7I-tWY" secondAttribute="width" multiplier="2:3" id="wRF-Jj-3fw"/>
+                            <constraint firstItem="UY8-sC-xdx" firstAttribute="centerY" secondItem="fCW-0z-xvI" secondAttribute="centerY" id="xgF-jA-yrh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fCW-0z-xvI"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="tfv-8r-LQz" id="cKs-A6-6Y5"/>
+                        <outlet property="doneButton" destination="37S-vU-mNf" id="orL-ry-wPM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JlC-n1-I5t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96" y="60"/>
+        </scene>
+    </scenes>
+</document>
