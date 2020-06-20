@@ -26,7 +26,6 @@ class DatePickerViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let selectedDate = dateFormatter.string(from: datePicker.date)
-        print(selectedDate)
         delegate?.selectedDate(date: selectedDate)
         self.dismiss(animated: true, completion: nil)
     }

@@ -11,5 +11,5 @@ import Alamofire
 
 struct Constants {
     static let stationsUrl: URLConvertible = "https://tripstest.ryanair.com/static/stations.json"
-    static let flightsUrl: URLConvertible = "https://tripstest.ryanair.com/api/v4/Availability"
+    static let flightsUrl = "https://tripstest.ryanair.com/api/v4/Availability"
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchFlightsViewController: UIViewController, AirportPickerViewControllerDelegate, DatePickerViewControllerDelegate {
-
+    
     @IBOutlet weak var originLabel: UILabel!
     @IBOutlet weak var originAirportLabel: UILabel!
     @IBOutlet weak var destinationAirportLabel: UILabel!
@@ -23,9 +23,15 @@ class SearchFlightsViewController: UIViewController, AirportPickerViewController
     @IBOutlet weak var teensTextField: UITextField!
     @IBOutlet weak var childsTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     var airportList: AirportsList?
+    var origingAirport: String?
+    var destinationAirport: String?
+    
+    var flights: Flights?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +52,32 @@ class SearchFlightsViewController: UIViewController, AirportPickerViewController
     }
     
     @IBAction func searchButtonAction(_ sender: UIButton) {
+        
+        var childs: String = "0"
+        var teens: String = "0"
+        
+        if let destinationCode = destinationAirport, let originCode = origingAirport, let date = selectedDateLabel.text, let adults = adultsTextField.text {
+            
+            if let childsText = childsTextField.text, !childsText.isEmpty {
+                childs = childsText
+            }
+            
+            if let teensText = teensTextField.text, !teensText.isEmpty {
+                teens = teensText
+            }
+            
+            if destinationCode.isEmpty || originCode.isEmpty || adults.isEmpty || date.isEmpty {
+                let alert = UIAlertController(title: "Error", message: "Origin, destination, date or adults can't be empty", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                self.getFlights(origin: originCode, destination: destinationCode, date: date, adults: adults, childs: childs, teens: teens)
+            }
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Origin, destination, date or adults can't be empty", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     
@@ -91,9 +123,11 @@ class SearchFlightsViewController: UIViewController, AirportPickerViewController
     func selectedAirport(airport: Airport?, isOriginAirport: Bool) {
         if isOriginAirport {
             originAirportLabel.text = airport?.name
+            self.origingAirport = airport?.code
             originAirportLabel.textColor = .black
         } else {
             destinationAirportLabel.text = airport?.name
+            self.destinationAirport = airport?.code
             destinationAirportLabel.textColor = .black
         }
     }
@@ -113,4 +147,29 @@ class SearchFlightsViewController: UIViewController, AirportPickerViewController
         
     }
     
+    
+    func getFlights(origin: String, destination: String, date: String, adults: String, childs: String, teens: String) {
+        activityIndicator.startAnimating()
+        ConnectionController.shared.getFlights(originCode: origin, destinationCode: destination, dateOut: date, adt: adults, teen: teens, chd: childs) { (response) in
+            if !response.hasError {
+                self.flights = response.model
+                self.performSegue(withIdentifier: "SearchToFlightsView", sender: self)
+            }
+            
+            self.activityIndicator.stopAnimating()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SearchToFlightsView" {
+            guard let flightsVC: FlightsListViewController = segue.destination as? FlightsListViewController else {
+                return
+            }
+            
+            flightsVC.fligths = self.flights
+            
+            
+        }
+    }
+ 
 }

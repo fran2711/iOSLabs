@@ -45,3 +45,14 @@ extension UITextField{
         self.resignFirstResponder()
     }
 }
+
+
+extension URLQueryItem {
+    static func fromDict(dict: [String : String]) -> [URLQueryItem] {
+        var queryItems = [URLQueryItem]()
+        for (key, value) in dict {
+            queryItems.append(URLQueryItem(name: key, value: value))
+        }
+        return queryItems
+    }
+}

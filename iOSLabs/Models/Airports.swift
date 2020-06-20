@@ -13,6 +13,7 @@ struct AirportsList: Codable {
 }
 
 struct Airport: Codable {
+    var code: String?
     var name: String?
     var alternateName: String?
     var alias: [String]?

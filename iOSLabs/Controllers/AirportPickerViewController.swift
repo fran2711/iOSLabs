@@ -16,14 +16,19 @@ class AirportPickerViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     @IBOutlet weak var airportPickerBackgroundView: UIView!
     @IBOutlet weak var aiportPickerView: UIPickerView!
+    @IBOutlet weak var doneButton: UIButton!
     
     var delegate: AirportPickerViewControllerDelegate?
     var isOriginAirport = false
     
     var airportList: AirportsList?
+    var selectedAirport: Airport?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        airportList?.airports?.insert(Airport(), at: 0)
+        
     }
     
     
@@ -40,13 +45,21 @@ class AirportPickerViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
         return airportList?.airports?[row].name
     }
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.dismiss(animated: true, completion: nil)
-        delegate?.selectedAirport(airport: airportList?.airports?[row], isOriginAirport: isOriginAirport)
+        selectedAirport = airportList?.airports?[row]
     }
+    
+    
+    
+    @IBAction func doneButtonAction(_ sender: UIButton) {
+         delegate?.selectedAirport(airport: selectedAirport, isOriginAirport: isOriginAirport)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 }

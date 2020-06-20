@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		692EDF6242F147EBF325393A /* Pods_iOSLabs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98ECA995D22A6D3190B8A70 /* Pods_iOSLabs.framework */; };
 		A14813C924993698009BA662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14813C824993698009BA662 /* AppDelegate.swift */; };
-		A14813D024993698009BA662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14813CE24993698009BA662 /* Main.storyboard */; };
+		A14813D024993698009BA662 /* SearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14813CE24993698009BA662 /* SearchView.storyboard */; };
 		A14813D22499369A009BA662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14813D12499369A009BA662 /* Assets.xcassets */; };
 		A14813D52499369A009BA662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14813D32499369A009BA662 /* LaunchScreen.storyboard */; };
 		A14813DE24993AE7009BA662 /* Airports.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14813DD24993AE7009BA662 /* Airports.swift */; };
@@ -23,8 +23,12 @@
 		A16727A7249A731C004D0E67 /* AirportPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16727A6249A731C004D0E67 /* AirportPickerViewController.swift */; };
 		A1EDC38F249A8EEF0067A33D /* DatePickerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1EDC38E249A8EEF0067A33D /* DatePickerView.storyboard */; };
 		A1EDC391249A8FB00067A33D /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDC390249A8FB00067A33D /* DatePickerViewController.swift */; };
-		A1EDC393249A97260067A33D /* SearchFlightsViewController+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDC392249A97260067A33D /* SearchFlightsViewController+UITextField.swift */; };
 		A1EDC395249A99230067A33D /* UtilExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDC394249A99230067A33D /* UtilExtensions.swift */; };
+		A1EDC397249AC6090067A33D /* Flights.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDC396249AC6090067A33D /* Flights.swift */; };
+		A1EDC399249B878C0067A33D /* FlightsListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1EDC398249B878C0067A33D /* FlightsListView.storyboard */; };
+		A1EDC39B249B87FF0067A33D /* FlightsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDC39A249B87FF0067A33D /* FlightsListViewController.swift */; };
+		A1EDC39F249CD0330067A33D /* FlightsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDC39D249CD0320067A33D /* FlightsTableViewCell.swift */; };
+		A1EDC3A0249CD0330067A33D /* FlightsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1EDC39E249CD0320067A33D /* FlightsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +36,7 @@
 		A0614E4AF74F34F8CAD0DD6D /* Pods-iOSLabs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSLabs.release.xcconfig"; path = "Target Support Files/Pods-iOSLabs/Pods-iOSLabs.release.xcconfig"; sourceTree = "<group>"; };
 		A14813C524993698009BA662 /* iOSLabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSLabs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14813C824993698009BA662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A14813CF24993698009BA662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A14813CF24993698009BA662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SearchView.storyboard; sourceTree = "<group>"; };
 		A14813D12499369A009BA662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A14813D42499369A009BA662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A14813D62499369A009BA662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,8 +51,12 @@
 		A16727A6249A731C004D0E67 /* AirportPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportPickerViewController.swift; sourceTree = "<group>"; };
 		A1EDC38E249A8EEF0067A33D /* DatePickerView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DatePickerView.storyboard; sourceTree = "<group>"; };
 		A1EDC390249A8FB00067A33D /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
-		A1EDC392249A97260067A33D /* SearchFlightsViewController+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchFlightsViewController+UITextField.swift"; sourceTree = "<group>"; };
 		A1EDC394249A99230067A33D /* UtilExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilExtensions.swift; sourceTree = "<group>"; };
+		A1EDC396249AC6090067A33D /* Flights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flights.swift; sourceTree = "<group>"; };
+		A1EDC398249B878C0067A33D /* FlightsListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FlightsListView.storyboard; sourceTree = "<group>"; };
+		A1EDC39A249B87FF0067A33D /* FlightsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsListViewController.swift; sourceTree = "<group>"; };
+		A1EDC39D249CD0320067A33D /* FlightsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsTableViewCell.swift; sourceTree = "<group>"; };
+		A1EDC39E249CD0320067A33D /* FlightsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightsTableViewCell.xib; sourceTree = "<group>"; };
 		E98ECA995D22A6D3190B8A70 /* Pods_iOSLabs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSLabs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -120,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				A14813DD24993AE7009BA662 /* Airports.swift */,
+				A1EDC396249AC6090067A33D /* Flights.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,10 +146,12 @@
 		A167279F249A6B13004D0E67 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A14813CE24993698009BA662 /* Main.storyboard */,
+				A1EDC39C249CD0090067A33D /* FlightsCell */,
+				A14813CE24993698009BA662 /* SearchView.storyboard */,
 				A14813D32499369A009BA662 /* LaunchScreen.storyboard */,
 				A16727A4249A7202004D0E67 /* AirportPickerView.storyboard */,
 				A1EDC38E249A8EEF0067A33D /* DatePickerView.storyboard */,
+				A1EDC398249B878C0067A33D /* FlightsListView.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,9 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				A167279D249A69EE004D0E67 /* SearchFlightsViewController.swift */,
-				A1EDC392249A97260067A33D /* SearchFlightsViewController+UITextField.swift */,
 				A16727A6249A731C004D0E67 /* AirportPickerViewController.swift */,
 				A1EDC390249A8FB00067A33D /* DatePickerViewController.swift */,
+				A1EDC39A249B87FF0067A33D /* FlightsListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +173,15 @@
 				A16727A2249A6B6E004D0E67 /* AirportsListViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A1EDC39C249CD0090067A33D /* FlightsCell */ = {
+			isa = PBXGroup;
+			children = (
+				A1EDC39D249CD0320067A33D /* FlightsTableViewCell.swift */,
+				A1EDC39E249CD0320067A33D /* FlightsTableViewCell.xib */,
+			);
+			path = FlightsCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,10 +245,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A14813D52499369A009BA662 /* LaunchScreen.storyboard in Resources */,
+				A1EDC3A0249CD0330067A33D /* FlightsTableViewCell.xib in Resources */,
 				A14813D22499369A009BA662 /* Assets.xcassets in Resources */,
-				A14813D024993698009BA662 /* Main.storyboard in Resources */,
+				A14813D024993698009BA662 /* SearchView.storyboard in Resources */,
 				A16727A5249A7203004D0E67 /* AirportPickerView.storyboard in Resources */,
 				A1EDC38F249A8EEF0067A33D /* DatePickerView.storyboard in Resources */,
+				A1EDC399249B878C0067A33D /* FlightsListView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,11 +304,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A14813C924993698009BA662 /* AppDelegate.swift in Sources */,
+				A1EDC39F249CD0330067A33D /* FlightsTableViewCell.swift in Sources */,
 				A1EDC395249A99230067A33D /* UtilExtensions.swift in Sources */,
 				A14813E024993EAD009BA662 /* ConnectionController.swift in Sources */,
 				A16727A3249A6B6E004D0E67 /* AirportsListViewModel.swift in Sources */,
+				A1EDC39B249B87FF0067A33D /* FlightsListViewController.swift in Sources */,
 				A14813DE24993AE7009BA662 /* Airports.swift in Sources */,
-				A1EDC393249A97260067A33D /* SearchFlightsViewController+UITextField.swift in Sources */,
+				A1EDC397249AC6090067A33D /* Flights.swift in Sources */,
 				A167279E249A69EE004D0E67 /* SearchFlightsViewController.swift in Sources */,
 				A14813E224993F2F009BA662 /* Constants.swift in Sources */,
 				A1EDC391249A8FB00067A33D /* DatePickerViewController.swift in Sources */,
@@ -299,12 +323,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A14813CE24993698009BA662 /* Main.storyboard */ = {
+		A14813CE24993698009BA662 /* SearchView.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A14813CF24993698009BA662 /* Base */,
 			);
-			name = Main.storyboard;
+			name = SearchView.storyboard;
 			sourceTree = "<group>";
 		};
 		A14813D32499369A009BA662 /* LaunchScreen.storyboard */ = {

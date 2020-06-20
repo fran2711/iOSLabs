@@ -49,8 +49,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-sv-4Gk">
-                                <rect key="frame" x="15" y="617" width="345" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="15" y="597" width="345" height="50"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9qf-Sp-Q3F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="searchButtonAction:" destination="M91-71-jT0" eventType="touchUpInside" id="gh5-3L-AcV"/>
                                 </connections>
@@ -66,7 +73,7 @@
                                     <outlet property="delegate" destination="M91-71-jT0" id="o7p-eL-lVp"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of adults" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u7b-NW-8DT">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of teens" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u7b-NW-8DT">
                                 <rect key="frame" x="76" y="276" width="283" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
@@ -77,7 +84,7 @@
                                     <outlet property="delegate" destination="M91-71-jT0" id="4hS-Ek-VVN"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of adults" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4l8-Ga-L99">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of children" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4l8-Ga-L99">
                                 <rect key="frame" x="94" y="340" width="267" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
@@ -112,6 +119,10 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="rMj-qB-Pos">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -149,8 +160,10 @@
                             <constraint firstItem="WIY-wv-f12" firstAttribute="height" secondItem="2RZ-Ta-7Q5" secondAttribute="height" id="gbj-UG-6yk"/>
                             <constraint firstItem="d5D-At-Dd4" firstAttribute="height" secondItem="WIY-wv-f12" secondAttribute="height" id="iTR-AU-wJ6"/>
                             <constraint firstItem="4l8-Ga-L99" firstAttribute="centerY" secondItem="ru0-0p-bMf" secondAttribute="centerY" id="kOr-Hh-FoF"/>
+                            <constraint firstItem="rMj-qB-Pos" firstAttribute="centerX" secondItem="VcV-k2-dmU" secondAttribute="centerX" id="kkb-RA-X9E"/>
                             <constraint firstItem="d5D-At-Dd4" firstAttribute="leading" secondItem="WIY-wv-f12" secondAttribute="trailing" constant="10" id="lHf-lO-RjJ"/>
                             <constraint firstItem="Nfu-cY-nLe" firstAttribute="top" secondItem="WIY-wv-f12" secondAttribute="bottom" constant="30" id="qdR-a4-RSV"/>
+                            <constraint firstItem="rMj-qB-Pos" firstAttribute="centerY" secondItem="VcV-k2-dmU" secondAttribute="centerY" id="qej-uP-G0x"/>
                             <constraint firstItem="Nfu-cY-nLe" firstAttribute="height" secondItem="1qI-YA-kwj" secondAttribute="height" id="rkC-xm-iCy"/>
                             <constraint firstItem="Nfu-cY-nLe" firstAttribute="height" secondItem="2RZ-Ta-7Q5" secondAttribute="height" id="tJ3-oP-0Va"/>
                             <constraint firstItem="ru0-0p-bMf" firstAttribute="height" secondItem="4l8-Ga-L99" secondAttribute="height" id="tU6-4E-Lge"/>
@@ -163,6 +176,7 @@
                         <viewLayoutGuide key="safeArea" id="VcV-k2-dmU"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="rMj-qB-Pos" id="9VT-6u-G7x"/>
                         <outlet property="adultsLabel" destination="Nfu-cY-nLe" id="1Bg-ZX-Ndh"/>
                         <outlet property="adultsTextField" destination="1qI-YA-kwj" id="hef-rc-HTK"/>
                         <outlet property="childLabel" destination="ru0-0p-bMf" id="kd4-RZ-eCa"/>
@@ -176,11 +190,22 @@
                         <outlet property="selectedDateLabel" destination="d5D-At-Dd4" id="JEa-6z-6yZ"/>
                         <outlet property="teensLabel" destination="9RA-p8-52V" id="pG1-7S-azs"/>
                         <outlet property="teensTextField" destination="u7b-NW-8DT" id="Ze0-Hr-oBH"/>
+                        <segue destination="YfG-tc-RIb" kind="show" identifier="SearchToFlightsView" id="OSb-57-ywM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Zp-DI-kK0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="224.80000000000001" y="-640.02998500749629"/>
+        </scene>
+        <!--FlightsListView-->
+        <scene sceneID="Dkc-Dd-nZN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FlightsListView" id="YfG-tc-RIb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4Z7-le-17A"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BCX-Tx-htj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="-637"/>
         </scene>
     </scenes>
 </document>
