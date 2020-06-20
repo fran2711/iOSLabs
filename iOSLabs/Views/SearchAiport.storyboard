@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KaT-VN-Fcy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Airports View Controller-->
+        <scene sceneID="vOG-an-zIK">
+            <objects>
+                <viewController id="KaT-VN-Fcy" customClass="SearchAirportsViewController" customModule="iOSLabs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3pe-Nr-gik">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaE-kw-myh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="KaT-VN-Fcy" id="6rb-Zb-3Uo"/>
+                                    <outlet property="delegate" destination="KaT-VN-Fcy" id="Maa-DL-xPy"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TaE-kw-myh" firstAttribute="top" secondItem="pIj-mE-AHo" secondAttribute="top" id="8vk-wB-9nB"/>
+                            <constraint firstAttribute="bottom" secondItem="TaE-kw-myh" secondAttribute="bottom" id="NVJ-Z4-RoP"/>
+                            <constraint firstItem="TaE-kw-myh" firstAttribute="leading" secondItem="pIj-mE-AHo" secondAttribute="leading" id="YLb-aP-vQu"/>
+                            <constraint firstItem="pIj-mE-AHo" firstAttribute="trailing" secondItem="TaE-kw-myh" secondAttribute="trailing" id="YZi-68-pF3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pIj-mE-AHo"/>
+                    </view>
+                    <connections>
+                        <outlet property="airportsTableView" destination="TaE-kw-myh" id="dab-49-hCX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="idG-vw-MyV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="387" y="-194"/>
+        </scene>
+    </scenes>
+</document>

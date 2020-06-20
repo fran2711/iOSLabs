@@ -20,7 +20,7 @@
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="tfv-8r-LQz">
                                         <rect key="frame" x="0.0" y="0.0" width="276" height="240"/>
-                                        <locale key="locale" localeIdentifier="es"/>
+                                        <locale key="locale" localeIdentifier="en"/>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37S-vU-mNf">
                                         <rect key="frame" x="0.0" y="250" width="276" height="50"/>

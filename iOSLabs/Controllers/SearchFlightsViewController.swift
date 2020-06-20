@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SearchFlightsViewController: UIViewController, AirportPickerViewControllerDelegate, DatePickerViewControllerDelegate {
-    
+class SearchFlightsViewController: UIViewController, SearchAirportsViewControllerDelegate, DatePickerViewControllerDelegate {
+   
     @IBOutlet weak var originLabel: UILabel!
     @IBOutlet weak var originAirportLabel: UILabel!
     @IBOutlet weak var destinationAirportLabel: UILabel!
@@ -110,15 +110,18 @@ class SearchFlightsViewController: UIViewController, AirportPickerViewController
     }
     
     func showAirportSelection(isOriginAirport: Bool) {
-        let storyboard = UIStoryboard(name: "AirportPickerView", bundle: nil)
-        guard let alertViewController: AirportPickerViewController = storyboard.instantiateInitialViewController() as? AirportPickerViewController else {
+
+        let storyboard = UIStoryboard(name: "SearchAiport", bundle: nil)
+        guard let alertViewController: SearchAirportsViewController = storyboard.instantiateInitialViewController() as? SearchAirportsViewController else {
             return
         }
+        
         alertViewController.isOriginAirport = isOriginAirport
-        alertViewController.delegate = self
+        alertViewController.searchDelegate = self
         alertViewController.airportList = self.airportList
         showAlertController(alertViewController: alertViewController)
     }
+    
     
     func selectedAirport(airport: Airport?, isOriginAirport: Bool) {
         if isOriginAirport {
@@ -144,7 +147,6 @@ class SearchFlightsViewController: UIViewController, AirportPickerViewController
         alertViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         alertViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         self.present(alertViewController, animated: true, completion: nil)
-        
     }
     
     
@@ -165,10 +167,7 @@ class SearchFlightsViewController: UIViewController, AirportPickerViewController
             guard let flightsVC: FlightsListViewController = segue.destination as? FlightsListViewController else {
                 return
             }
-            
             flightsVC.fligths = self.flights
-            
-            
         }
     }
  

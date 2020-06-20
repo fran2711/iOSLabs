@@ -20,6 +20,7 @@ class DatePickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePicker.minimumDate = Date()
     }
     
     @IBAction func doneButtonAction(_ sender: UIButton) {
