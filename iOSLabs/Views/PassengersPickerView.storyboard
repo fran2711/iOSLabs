@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ycQ-2f-88E">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Passengers Picker View Controller-->
+        <scene sceneID="K4E-hs-QRV">
+            <objects>
+                <viewController id="ycQ-2f-88E" customClass="PassengersPickerViewController" customModule="iOSLabs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jgX-ht-dNH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixU-4a-b0S">
+                                <rect key="frame" x="69" y="303.5" width="276" height="299"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtP-bH-mwa">
+                                        <rect key="frame" x="0.0" y="0.0" width="276" height="249"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="ycQ-2f-88E" id="eot-XI-9Vq"/>
+                                            <outlet property="delegate" destination="ycQ-2f-88E" id="frh-Ul-pe4"/>
+                                        </connections>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGe-i4-fiY">
+                                        <rect key="frame" x="0.0" y="249" width="276" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="8xR-ln-Y0l"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonAction:" destination="ycQ-2f-88E" eventType="touchUpInside" id="o4U-FQ-KF0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="mtP-bH-mwa" firstAttribute="top" secondItem="ixU-4a-b0S" secondAttribute="top" id="8i3-gm-LT4"/>
+                                    <constraint firstAttribute="trailing" secondItem="eGe-i4-fiY" secondAttribute="trailing" id="A1j-al-GkN"/>
+                                    <constraint firstAttribute="bottom" secondItem="eGe-i4-fiY" secondAttribute="bottom" id="M1N-dw-0ON"/>
+                                    <constraint firstItem="mtP-bH-mwa" firstAttribute="width" secondItem="ixU-4a-b0S" secondAttribute="width" id="Uj8-lk-IuT"/>
+                                    <constraint firstItem="mtP-bH-mwa" firstAttribute="centerX" secondItem="ixU-4a-b0S" secondAttribute="centerX" id="VVN-gw-OPk"/>
+                                    <constraint firstItem="eGe-i4-fiY" firstAttribute="leading" secondItem="ixU-4a-b0S" secondAttribute="leading" id="Ydt-r5-pyy"/>
+                                    <constraint firstItem="eGe-i4-fiY" firstAttribute="top" secondItem="mtP-bH-mwa" secondAttribute="bottom" id="qcK-Hg-baf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ixU-4a-b0S" firstAttribute="centerY" secondItem="xCZ-HN-HSz" secondAttribute="centerY" id="OZi-pc-iVq"/>
+                            <constraint firstItem="ixU-4a-b0S" firstAttribute="width" secondItem="jgX-ht-dNH" secondAttribute="width" multiplier="2:3" id="QNg-8C-qSa"/>
+                            <constraint firstItem="ixU-4a-b0S" firstAttribute="centerX" secondItem="xCZ-HN-HSz" secondAttribute="centerX" id="et4-Hy-Z2B"/>
+                            <constraint firstItem="ixU-4a-b0S" firstAttribute="height" secondItem="jgX-ht-dNH" secondAttribute="height" multiplier="1:3" id="gin-ST-TDn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xCZ-HN-HSz"/>
+                    </view>
+                    <connections>
+                        <outlet property="passengersPickerView" destination="mtP-bH-mwa" id="3Vt-hS-Oa0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SwL-eT-eFV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-193" y="70"/>
+        </scene>
+    </scenes>
+</document>

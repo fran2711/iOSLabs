@@ -8,8 +8,10 @@
 
 import UIKit
 
-class SearchFlightsViewController: UIViewController, SearchAirportsViewControllerDelegate, DatePickerViewControllerDelegate {
-   
+class SearchFlightsViewController: UIViewController, SearchAirportsViewControllerDelegate, DatePickerViewControllerDelegate, PassengersPickerViewControllerDelegate {
+    
+    
+    
     @IBOutlet weak var originLabel: UILabel!
     @IBOutlet weak var originAirportLabel: UILabel!
     @IBOutlet weak var destinationAirportLabel: UILabel!
@@ -51,6 +53,18 @@ class SearchFlightsViewController: UIViewController, SearchAirportsViewControlle
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SearchToFlightsView" {
+            guard let flightsVC: FlightsListViewController = segue.destination as? FlightsListViewController else {
+                return
+            }
+            flightsVC.fligths = self.flights
+        }
+    }
+    
+    
+    // MARK: - Action
+    
     @IBAction func searchButtonAction(_ sender: UIButton) {
         
         var childs: String = "0"
@@ -81,6 +95,21 @@ class SearchFlightsViewController: UIViewController, SearchAirportsViewControlle
     }
     
     
+    @IBAction func adultsButtonAction(_ sender: Any) {
+        showPassengersPicker(isAdult: true, isTeen: false)
+    }
+    
+    
+    @IBAction func teensButtonAction(_ sender: Any) {
+        showPassengersPicker(isAdult: false, isTeen: true)
+    }
+    
+    
+    @IBAction func childsButtonAction(_ sender: Any) {
+        showPassengersPicker(isAdult: false, isTeen: false)
+    }
+    
+    // MARK: - Tap Gestures
     
     @objc func getOriginAirports(_ sender: UITapGestureRecognizer) {
         getAirports(isOriginAirport: true)
@@ -100,6 +129,9 @@ class SearchFlightsViewController: UIViewController, SearchAirportsViewControlle
         showAlertController(alertViewController: alertViewController)
     }
     
+    
+    // MARK: - Internal
+    
     func getAirports(isOriginAirport: Bool) {
         ConnectionController.shared.getStations() { (response) in
             if !response.hasError {
@@ -109,8 +141,35 @@ class SearchFlightsViewController: UIViewController, SearchAirportsViewControlle
         }
     }
     
+    func getFlights(origin: String, destination: String, date: String, adults: String, childs: String, teens: String) {
+        activityIndicator.startAnimating()
+        ConnectionController.shared.getFlights(originCode: origin, destinationCode: destination, dateOut: date, adt: adults, teen: teens, chd: childs) { (response) in
+            if !response.hasError {
+                self.flights = response.model
+                self.performSegue(withIdentifier: "SearchToFlightsView", sender: self)
+            }
+            
+            self.activityIndicator.stopAnimating()
+        }
+    }
+    
+    // MARK: - Show Methods
+    
+    func showPassengersPicker(isAdult: Bool, isTeen: Bool) {
+        
+        let storyboard = UIStoryboard(name: "PassengersPickerView", bundle: nil)
+        guard let alertVC: PassengersPickerViewController = storyboard.instantiateInitialViewController() as? PassengersPickerViewController else {
+            return
+        }
+        
+        alertVC.isAdult = isAdult
+        alertVC.isTeen = isTeen
+        alertVC.passengersDelegate = self
+        showAlertController(alertViewController: alertVC)
+    }
+    
     func showAirportSelection(isOriginAirport: Bool) {
-
+        
         let storyboard = UIStoryboard(name: "SearchAiport", bundle: nil)
         guard let alertViewController: SearchAirportsViewController = storyboard.instantiateInitialViewController() as? SearchAirportsViewController else {
             return
@@ -122,6 +181,16 @@ class SearchFlightsViewController: UIViewController, SearchAirportsViewControlle
         showAlertController(alertViewController: alertViewController)
     }
     
+    func showAlertController(alertViewController: UIViewController) {
+        alertViewController.providesPresentationContextTransitionStyle = true
+        alertViewController.definesPresentationContext = true
+        alertViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        alertViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(alertViewController, animated: true, completion: nil)
+    }
+    
+    
+    // MARK: - Delegate Methods
     
     func selectedAirport(airport: Airport?, isOriginAirport: Bool) {
         if isOriginAirport {
@@ -139,36 +208,19 @@ class SearchFlightsViewController: UIViewController, SearchAirportsViewControlle
         selectedDateLabel.text = date
     }
     
-    
-    
-    func showAlertController(alertViewController: UIViewController) {
-        alertViewController.providesPresentationContextTransitionStyle = true
-        alertViewController.definesPresentationContext = true
-        alertViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        alertViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        self.present(alertViewController, animated: true, completion: nil)
-    }
-    
-    
-    func getFlights(origin: String, destination: String, date: String, adults: String, childs: String, teens: String) {
-        activityIndicator.startAnimating()
-        ConnectionController.shared.getFlights(originCode: origin, destinationCode: destination, dateOut: date, adt: adults, teen: teens, chd: childs) { (response) in
-            if !response.hasError {
-                self.flights = response.model
-                self.performSegue(withIdentifier: "SearchToFlightsView", sender: self)
-            }
+    func selectedNumberOfPassengers(passengers: Int?, isAdult: Bool, isTeen: Bool) {
+        
+        if let pass = passengers {
             
-            self.activityIndicator.stopAnimating()
+            if isAdult {
+                self.adultsTextField.text = String(describing: pass)
+            } else if isTeen {
+                self.teensTextField.text = String(describing: pass)
+            } else {
+                self.childsTextField.text = String(describing: pass)
+            }
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SearchToFlightsView" {
-            guard let flightsVC: FlightsListViewController = segue.destination as? FlightsListViewController else {
-                return
-            }
-            flightsVC.fligths = self.flights
-        }
-    }
- 
+    
 }

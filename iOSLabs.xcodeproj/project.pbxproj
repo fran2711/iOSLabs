@@ -18,8 +18,6 @@
 		A167279A2499493F004D0E67 /* LabsBasicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16727992499493F004D0E67 /* LabsBasicResponse.swift */; };
 		A167279C24994A41004D0E67 /* LabsApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167279B24994A41004D0E67 /* LabsApiResponse.swift */; };
 		A167279E249A69EE004D0E67 /* SearchFlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167279D249A69EE004D0E67 /* SearchFlightsViewController.swift */; };
-		A16727A5249A7203004D0E67 /* AirportPickerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16727A4249A7202004D0E67 /* AirportPickerView.storyboard */; };
-		A16727A7249A731C004D0E67 /* AirportPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16727A6249A731C004D0E67 /* AirportPickerViewController.swift */; };
 		A1EDC38F249A8EEF0067A33D /* DatePickerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1EDC38E249A8EEF0067A33D /* DatePickerView.storyboard */; };
 		A1EDC391249A8FB00067A33D /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDC390249A8FB00067A33D /* DatePickerViewController.swift */; };
 		A1EDC395249A99230067A33D /* UtilExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDC394249A99230067A33D /* UtilExtensions.swift */; };
@@ -32,6 +30,8 @@
 		A1EDC3A8249E162D0067A33D /* SearchAirportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDC3A7249E162D0067A33D /* SearchAirportsViewController.swift */; };
 		A1EDC3AC249E4C130067A33D /* AirportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDC3AA249E4C130067A33D /* AirportTableViewCell.swift */; };
 		A1EDC3AD249E4C130067A33D /* AirportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1EDC3AB249E4C130067A33D /* AirportTableViewCell.xib */; };
+		A1EDC3AF249E64330067A33D /* PassengersPickerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1EDC3AE249E64330067A33D /* PassengersPickerView.storyboard */; };
+		A1EDC3B1249E6B090067A33D /* PassengersPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDC3B0249E6B090067A33D /* PassengersPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,8 +49,6 @@
 		A16727992499493F004D0E67 /* LabsBasicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsBasicResponse.swift; sourceTree = "<group>"; };
 		A167279B24994A41004D0E67 /* LabsApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsApiResponse.swift; sourceTree = "<group>"; };
 		A167279D249A69EE004D0E67 /* SearchFlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlightsViewController.swift; sourceTree = "<group>"; };
-		A16727A4249A7202004D0E67 /* AirportPickerView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AirportPickerView.storyboard; sourceTree = "<group>"; };
-		A16727A6249A731C004D0E67 /* AirportPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportPickerViewController.swift; sourceTree = "<group>"; };
 		A1EDC38E249A8EEF0067A33D /* DatePickerView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DatePickerView.storyboard; sourceTree = "<group>"; };
 		A1EDC390249A8FB00067A33D /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		A1EDC394249A99230067A33D /* UtilExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilExtensions.swift; sourceTree = "<group>"; };
@@ -63,6 +61,8 @@
 		A1EDC3A7249E162D0067A33D /* SearchAirportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAirportsViewController.swift; sourceTree = "<group>"; };
 		A1EDC3AA249E4C130067A33D /* AirportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportTableViewCell.swift; sourceTree = "<group>"; };
 		A1EDC3AB249E4C130067A33D /* AirportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AirportTableViewCell.xib; sourceTree = "<group>"; };
+		A1EDC3AE249E64330067A33D /* PassengersPickerView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PassengersPickerView.storyboard; sourceTree = "<group>"; };
+		A1EDC3B0249E6B090067A33D /* PassengersPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengersPickerViewController.swift; sourceTree = "<group>"; };
 		E98ECA995D22A6D3190B8A70 /* Pods_iOSLabs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSLabs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,10 +155,10 @@
 				A1EDC39C249CD0090067A33D /* FlightsCell */,
 				A14813CE24993698009BA662 /* SearchView.storyboard */,
 				A14813D32499369A009BA662 /* LaunchScreen.storyboard */,
-				A16727A4249A7202004D0E67 /* AirportPickerView.storyboard */,
 				A1EDC38E249A8EEF0067A33D /* DatePickerView.storyboard */,
 				A1EDC398249B878C0067A33D /* FlightsListView.storyboard */,
 				A1EDC3A5249E12E30067A33D /* SearchAiport.storyboard */,
+				A1EDC3AE249E64330067A33D /* PassengersPickerView.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,10 +167,10 @@
 			isa = PBXGroup;
 			children = (
 				A167279D249A69EE004D0E67 /* SearchFlightsViewController.swift */,
-				A16727A6249A731C004D0E67 /* AirportPickerViewController.swift */,
 				A1EDC390249A8FB00067A33D /* DatePickerViewController.swift */,
 				A1EDC39A249B87FF0067A33D /* FlightsListViewController.swift */,
 				A1EDC3A7249E162D0067A33D /* SearchAirportsViewController.swift */,
+				A1EDC3B0249E6B090067A33D /* PassengersPickerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,9 +258,9 @@
 				A14813D22499369A009BA662 /* Assets.xcassets in Resources */,
 				A1EDC3A6249E12E30067A33D /* SearchAiport.storyboard in Resources */,
 				A14813D024993698009BA662 /* SearchView.storyboard in Resources */,
-				A16727A5249A7203004D0E67 /* AirportPickerView.storyboard in Resources */,
 				A1EDC3AD249E4C130067A33D /* AirportTableViewCell.xib in Resources */,
 				A1EDC38F249A8EEF0067A33D /* DatePickerView.storyboard in Resources */,
+				A1EDC3AF249E64330067A33D /* PassengersPickerView.storyboard in Resources */,
 				A1EDC399249B878C0067A33D /* FlightsListView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,13 +321,13 @@
 				A1EDC3A8249E162D0067A33D /* SearchAirportsViewController.swift in Sources */,
 				A1EDC39B249B87FF0067A33D /* FlightsListViewController.swift in Sources */,
 				A14813DE24993AE7009BA662 /* Airports.swift in Sources */,
+				A1EDC3B1249E6B090067A33D /* PassengersPickerViewController.swift in Sources */,
 				A1EDC397249AC6090067A33D /* Flights.swift in Sources */,
 				A1EDC3AC249E4C130067A33D /* AirportTableViewCell.swift in Sources */,
 				A167279E249A69EE004D0E67 /* SearchFlightsViewController.swift in Sources */,
 				A14813E224993F2F009BA662 /* Constants.swift in Sources */,
 				A1EDC391249A8FB00067A33D /* DatePickerViewController.swift in Sources */,
 				A167279A2499493F004D0E67 /* LabsBasicResponse.swift in Sources */,
-				A16727A7249A731C004D0E67 /* AirportPickerViewController.swift in Sources */,
 				A167279C24994A41004D0E67 /* LabsApiResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
